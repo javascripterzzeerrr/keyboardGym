@@ -1,0 +1,18 @@
+.field {
+
+    .input_text {
+        width: 1270px;
+        height: 200px;
+        font-size: 30px;
+        padding: 10px;
+        text-align: center;
+        border: none;
+        resize: none;
+        background: none;
+        
+        &:focus{
+            outline: none;
+        }
+    }
+}
+

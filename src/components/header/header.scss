@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
+
+.header_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 70px 0 0 0;
+    font-family: 'Passion One', cursive;
+    
+    .title{
+        font-size: 40px;
+        font-weight: bold;
+    }
+}
