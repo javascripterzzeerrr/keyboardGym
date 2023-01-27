@@ -1,0 +1,25 @@
+.statistic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+    flex-wrap: nowrap;
+
+    .statistic__content {
+        display: flex;
+        gap: 250px;
+
+        .speed, .cross{
+            font-size: 24px;
+            font-weight: 300;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-align: center;
+
+            .res {
+                color: red;
+                font-size: 24px;
+            }
+        }
+    }  
+}
