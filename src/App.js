@@ -1,11 +1,22 @@
-import Header from './components/header/Header';
-import Main from './components/main/Main';
+import { useState, useEffect } from 'react';
 
-function App() {
+import MainPage from './pages/MainPage';
+import WelcomePage from './pages/WelcomePage';
+
+const App = () => {
+  const [clickEnter, setClickEnter] = useState(false);
+
+  useEffect(() => {
+    document.addEventListener("keydown", () => {
+        setTimeout(
+          () => setClickEnter(true), 1000
+        );
+    });
+  }, []);
+
   return (
-    <div class="wrapper">
-      <Header/>
-      <Main/>
+    <div className="wrapper">
+      {!clickEnter ? <WelcomePage/> : <MainPage />}
     </div>
   );
 }

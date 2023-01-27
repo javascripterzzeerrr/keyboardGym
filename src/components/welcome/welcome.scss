@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Passion+One&display=swap');
+
+body {
+    background-color: rgb(136, 45, 87);
+}
+
+.content {
+    font-family: 'Passion One', cursive;
+    background-color: rgb(255, 255, 255);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    position: absolute;
+    top:  50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    .hello, .planning{
+        p {
+            font-size: 24px;
+        }
+    }
+}

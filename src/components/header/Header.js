@@ -6,8 +6,9 @@ const Header = () => {
          <div className="header_container">
             <div className="header_content">
                 <h1 className="title">
-                    Клавиатурный тренажер - прокачай скорость печати
+                    Клавиатурный тренажёр
                 </h1>
+                
             </div>
          </div>
         </header>

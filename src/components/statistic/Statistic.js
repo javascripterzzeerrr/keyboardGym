@@ -1,5 +1,7 @@
 import './statistic.scss';
 
+import Timer from '../timer/Timer';
+
 import cross from '../../img/cross.png';
 import speed from '../../img/speedometer.png';
 
@@ -10,6 +12,9 @@ const Statistic = ({pressCounter, wrongCounter}) => {
                <div className='speed'>
                     <img src={speed} alt="speed" />
                     <p>Символов в мин. - {}</p>
+                </div>
+                <div className="timer">
+                    <Timer/>
                 </div>
                 <div className='cross'>
                     <img src={cross} alt="cross" />
