@@ -13,8 +13,6 @@ const Field = () => {
 
     const initText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam saepe quisquam beatae eum impedit laudantium dolores laborum fuga voluptatum, asperiores libero temporibus voluptates consequuntur dolor quia iure, nostrum obcaecati numquam".split("");
 
-    console.log("initText ", initText);
-
     useEffect(() => {
         focusInput();
     }, []);
@@ -31,8 +29,6 @@ const Field = () => {
     }
 
     const compareString = (inputString, stateString) => {
-        console.log("inputString[carriage] ", inputString[carriage]);
-        console.log("stateString[carriage] ", stateString[carriage]);
         if (inputString.at(-1) === stateString[carriage]) {
             setCarriage(carriage => carriage + 1);
         } else {
@@ -49,9 +45,14 @@ const Field = () => {
         console.log('carriage ', carriage);
 
         for (let i = 0; i < initText.length; i++) {
-            res.push(<span style={i < carriage && carriage !== 0 ? {"background-color": "yellow"} : null}>{initText[i]}</span>)
+            if (i === 0) {
+                res.push(<span style={{"background-color":"white", "color":"green"}}>{initText[i]}</span>)
+            } 
+            else {
+                res.push(<span style={i < carriage && carriage !== 0 ? {"background-color": "white", "color": "green"} : null}>{initText[i]}</span>)
+            }
+            
         }
-
         return res;
     }
 

@@ -5,10 +5,6 @@ const Header = () => {
        <header className="header">
          <div className="header_container">
             <div className="header_content">
-                <h1 className="title">
-                    Клавиатурный тренажёр
-                </h1>
-                
             </div>
          </div>
         </header>

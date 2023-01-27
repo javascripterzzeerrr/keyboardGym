@@ -14,8 +14,11 @@
         font-size: 30px;
         padding: 10px;
         text-align: center;
-        background-color: rgb(212, 208, 208);
+        background-color: rgb(3, 116, 37);
+        color: #fff;
         border-radius: 10px;
+        font-weight: bold;
+        opacity: 0.9;
         
         &:focus{
             outline: none;
