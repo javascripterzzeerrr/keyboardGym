@@ -4,14 +4,14 @@ import Statistic from '../statistic/Statistic';
 
 import './field.scss';
 
-const Field = () => {
+const Field = ({ updatePressCounter, updateWrongCounter }) => {
     const [currentText, setCurrentText] = useState("");
     const textInputRef = useRef();
     const [carriage, setCarriage] = useState(0);
     const [wrongCounter, setWrongCounter] = useState(0);
     const [pressCounter, setPressCounter] = useState(0);
 
-    const initText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam saepe quisquam beatae eum impedit laudantium dolores laborum fuga voluptatum, asperiores libero temporibus voluptates consequuntur dolor quia iure, nostrum obcaecati numquam".split("");
+    const initText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam saepe quisquam beatae eum impedit laudantium dolores laborum fuga voluptatum, asperiores libero temporibus voluptates consequuntur dolor quia iure, nostrum obcaecati numquam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit".split("");
 
     useEffect(() => {
         focusInput();
@@ -22,8 +22,7 @@ const Field = () => {
     }
 
     const onChangeInput = (e) => {
-        const inputString = e.target.value
-        console.log(inputString);
+        const inputString = e.target.value;
         setCurrentText(inputString);
         compareString(inputString.split(""), initText);
     }
@@ -33,9 +32,11 @@ const Field = () => {
             setCarriage(carriage => carriage + 1);
         } else {
             setWrongCounter(wrongCounter => wrongCounter + 1);
+            updateWrongCounter();
         }
 
         setPressCounter(pressCounter => pressCounter + 1);
+        updatePressCounter();
     }
 
     // добавить useMemo или useCallback
@@ -50,8 +51,7 @@ const Field = () => {
             } 
             else {
                 res.push(<span style={i < carriage && carriage !== 0 ? {"background-color": "white", "color": "green"} : null}>{initText[i]}</span>)
-            }
-            
+            }  
         }
         return res;
     }

@@ -6,8 +6,9 @@
     flex-wrap: nowrap;
 
     .statistic__content {
+        width: 100%;
         display: flex;
-        gap: 150px;
+        justify-content: space-around;
 
         .speed, .cross{
             font-size: 24px;

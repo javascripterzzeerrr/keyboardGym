@@ -2,24 +2,24 @@ import { useState, useEffect } from 'react';
 
 import './timer.scss';
 
-const Timer = () => {
+const Timer = ({ updateGameProgress }) => {
     const [seconds, setSeconds] = useState(60);
     const [gameEnd, setGameEnd] = useState(false);
 
     useEffect(() => {
         let timer = setInterval(() => {
-            console.log(seconds);
             if (seconds - 1 < 0) {
-                clearInterval(timer);
+                updateGameProgress();
                 setGameEnd(true);
-            } 
+                clearInterval(timer);
+            }
             else {
                 setSeconds(seconds => seconds - 1);
             }
         }, 1000);
 
         return () => clearInterval(timer);
-    });
+    }, [seconds]);
 
     return (
         <div class="timer">
