@@ -13,9 +13,9 @@ const Statistic = ({pressCounter, wrongCounter}) => {
                 </div>
                 <div className='cross'>
                     <img src={cross} alt="cross" />
-                        <p>Процент ошибок - <em className='res'>{(wrongCounter > 0 && pressCounter > 0) ? Math.floor((wrongCounter / pressCounter) * 100) + " %" : null}</em></p>
-                    </div> 
-                </div>
+                    <p>Процент ошибок - <em className='res'>{(wrongCounter > 0 && pressCounter > 0) ? Math.floor((wrongCounter / pressCounter) * 100) + " %" : null}</em></p>
+                </div> 
+            </div>
         </div>
     );
 }

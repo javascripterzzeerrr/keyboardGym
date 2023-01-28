@@ -12,10 +12,13 @@
 
         .speed, .cross{
             font-size: 24px;
-            font-weight: 300;
-            font-weight: bold;
+            font-weight: lighter;
             margin-bottom: 30px;
             text-align: center;
+            p{
+                font-weight: 500;
+                font-family: 'Passion One', cursive;
+            }
 
             .res {
                 color: red;

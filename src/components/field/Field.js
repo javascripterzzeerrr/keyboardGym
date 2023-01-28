@@ -4,17 +4,21 @@ import Statistic from '../statistic/Statistic';
 
 import './field.scss';
 
-const Field = ({ updatePressCounter, updateWrongCounter }) => {
+const initText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam saepe quisquam beatae eum impedit laudantium dolores laborum fuga voluptatum, asperiores libero temporibus voluptates consequuntur dolor quia iure, nostrum obcaecati numquam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit".split("");
+
+const Field = ({ updatePressCounter, updateWrongCounter, updateCntLetter }) => {
     const [currentText, setCurrentText] = useState("");
     const textInputRef = useRef();
     const [carriage, setCarriage] = useState(0);
     const [wrongCounter, setWrongCounter] = useState(0);
     const [pressCounter, setPressCounter] = useState(0);
+    const [cntLetter, setCntLetter] = useState(initText[0]);
 
-    const initText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam saepe quisquam beatae eum impedit laudantium dolores laborum fuga voluptatum, asperiores libero temporibus voluptates consequuntur dolor quia iure, nostrum obcaecati numquam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit".split("");
+    console.log("initText[0] ", initText[0]);
 
     useEffect(() => {
         focusInput();
+        updateCntLetter(cntLetter);
     }, []);
 
     const focusInput = () => {
@@ -30,6 +34,7 @@ const Field = ({ updatePressCounter, updateWrongCounter }) => {
     const compareString = (inputString, stateString) => {
         if (inputString.at(-1) === stateString[carriage]) {
             setCarriage(carriage => carriage + 1);
+            updateCntLetter(initText[carriage + 1]);
         } else {
             setWrongCounter(wrongCounter => wrongCounter + 1);
             updateWrongCounter();

@@ -3,12 +3,16 @@
     font-size: 55px;
   }
   .timer__item {
+    background-color: #fff;
     position: relative;
     min-width: 60px;
     margin-left: 10px;
     margin-right: 10px;
-    padding-bottom: 15px;
+    padding: 10px;
     text-align: center;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
   }
   .timer__item::before {
     content: attr(data-title);

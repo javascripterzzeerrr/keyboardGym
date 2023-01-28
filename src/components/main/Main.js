@@ -17,6 +17,7 @@ const Main = () => {
     const [finishGame, setFinishGame] = useState(false);
     const [pressCounter, setPressCounter] = useState(0);
     const [wrongCounter, setWrongCounter] = useState(0);
+    const [cntLetter, setCntLetter] = useState("L");
 
     const updatePressCounter = () => {
         setPressCounter(pressCounter => pressCounter + 1);
@@ -30,12 +31,17 @@ const Main = () => {
         setFinishGame(true);
     }
 
+    const updateCntLetter = (newLetter) => {
+        console.log("NEW LETTER =>  ", newLetter);
+        setCntLetter(newLetter);
+    }
+
     const renderGame = () => {
         return (
             <>
                 <Timer updateGameProgress={updateGameProgress} />
-                <Field updatePressCounter={updatePressCounter} updateWrongCounter={updateWrongCounter} />
-                <Keyboard/>
+                <Field updatePressCounter={updatePressCounter} updateWrongCounter={updateWrongCounter} updateCntLetter={updateCntLetter} />
+                <Keyboard cntLetter={cntLetter} letter={cntLetter} />
             </>
         );
     };
