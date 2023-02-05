@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import './timer.scss';
 
 const Timer = ({ updateGameProgress }) => {
-    const [seconds, setSeconds] = useState(6000);
+    const [seconds, setSeconds] = useState(60);
     const [gameEnd, setGameEnd] = useState(false);
 
     useEffect(() => {

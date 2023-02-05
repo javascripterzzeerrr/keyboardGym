@@ -1,11 +1,15 @@
 import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { cntLetter } from "../../selectors/index";
 
 import './keyboard.scss';
 
-const Keyboard = ({ letter }) => {
+const Keyboard = () => {
+    let letter = useSelector(cntLetter);
 
-    console.log("LETTER => ", letter);
-
+    console.log("Keyboard letter ", letter)
+    
+    // crutch...
     if (letter === "" || letter === " ") {
         letter = "space"
     } else if (letter === ".") {
@@ -18,13 +22,12 @@ const Keyboard = ({ letter }) => {
         const allKeyboard = document.querySelectorAll(`[data-key]`);
         const fillKeyboard = document.querySelector(`[data-key=${letter.toLowerCase()}]`);
 
-        console.log("allKeyboard ", allKeyboard);
-        console.log("fillKeyboard ", fillKeyboard);
-
         allKeyboard.forEach(item => {
             item.classList.remove('active');
         });
+
         fillKeyboard.classList.add('active');
+
     }, [letter]);
     
     useEffect(() => {
