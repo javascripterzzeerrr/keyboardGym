@@ -1,9 +1,16 @@
+import { useSelector } from 'react-redux';
+
+import { wrongCounter, pressCounter } from "../../selectors/index";
+
 import './statistic.scss';
 
 import cross from '../../img/cross.png';
 import speed from '../../img/speedometer.png';
 
-const Statistic = ({pressCounter, wrongCounter}) => {
+const Statistic = () => {
+    const wrongCounterState = useSelector(wrongCounter);
+    const pressCounterState = useSelector(pressCounter);
+
     return (
         <div className="statistic">
             <div className="statistic__content">
@@ -13,7 +20,7 @@ const Statistic = ({pressCounter, wrongCounter}) => {
                 </div>
                 <div className='cross'>
                     <img src={cross} alt="cross" />
-                    <p>Процент ошибок - <em className='res'>{(wrongCounter > 0 && pressCounter > 0) ? Math.floor((wrongCounter / pressCounter) * 100) + " %" : null}</em></p>
+                    <p>Процент ошибок - <em className='res'>{(wrongCounterState > 0 && pressCounterState > 0) ? Math.floor((wrongCounterState / pressCounterState) * 100) + " %" : null}</em></p>
                 </div> 
             </div>
         </div>
